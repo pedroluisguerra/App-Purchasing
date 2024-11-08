@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+	<meta charset="utf-8">
+	<title>Confirm order</title>	
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<!-- Font-->
+	<link rel="stylesheet" type="text/css" href="\css\montserrat-font.css">
+	<link rel="stylesheet" type="text/css" href="\fonts\material-design-iconic-font\css\material-design-iconic-font.min.css">
+	<!-- Main Style Css -->
+    <link rel="stylesheet" href="\css\style.css"/>
+</head>
+<body class="form-v10">
+	<div class="page-content">
+		<a class="nav-link ms-auto" th:href="@{/purchases}"> 
+			<img src="\images\back_icon.png" alt="Logo" width="60" height="60" class="d-inline-block align-text-top image-spacing"> 
+		</a>
+		<div class="form-v10-content">
+			<form class="form-detail" th:action="@{/purchase/calculate}" th:object="${purchase}" method="POST" id="myform">
+				<div class="form-left">
+					<h2>Client Information</h2>	
+					<div class="form-group">
+						<div class="form-row form-row-5">
+						<span id="client_id" class="input-text">Client Id:</span>	
+						</div>
+						<div class="form-row form-row-6">
+							<input type="text" name="client.id" th:field="*{client.id}" id="client.id" class="input-text" placeholder="id" required oninput="validateNumber(this)">
+						</div>
+						<div class="form-row form-row-3">
+							<input type="text" name="client.client_name" th:field="*{client.client_name}"  id="client.client_name" class="input-text" placeholder="Client Name" required>
+						</div>
+						<div class="form-row form-row-4">
+							<input type="text" name="client_surname" th:field="*{client.client_surname}" id="client_surname" class="input-text" placeholder="Client Surname" required>
+						</div>
+					</div>
+					
+					<div class="form-row">
+						<input type="date" name="pdate" th:field=*{pdate} id="bdate" class="form-control" placeholder="Purchase date YYYY-MM-DD" required>
+					</div>
+					
+				</div>
+				<div class="form-right">
+					<h2>Purchase Details</h2>
+					<div class="form-group">
+						<div class="form-row form-row-5">
+						<span id="product_id" class="input-text white-text">Product Id:</span>	
+						</div>
+						<div class="form-row form-row-6">
+							<input type="text" name="product_id" th:field="*{product.id}" id="product_id" class="input-text" placeholder="id" required oninput="validateNumber(this)">
+						</div>
+						<div class="form-row form-row-7">
+							<input type="text" name="prod_description" th:field="*{product.prod_name}" id="prod_description" class="input-text" placeholder="Product description" required>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="form-row form-row-1">
+							<span id="price_unit" class="input-text white-text">Price Unit:</span>	
+						</div>
+						<div class="form-row form-row-2">
+							<input type="number" name="price_unit" id="price_unit" th:field="*{product.price_unit}" class="form-control" placeholder="Price per unit" required>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="form-row form-row-1">
+							<span id="pquantity" class="input-text white-text">Quantity:</span>	
+						</div>
+						<div class="form-row form-row-2">
+							<input type="number" name="pquantity" th:field="*{pquantity}" id="pquantity" class="form-control" placeholder="Insert quantity" required>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="form-row form-row-1">
+							<span id="vat" class="input-text white-text">VAT:</span>	
+						</div>
+						<div class="form-row form-row-2">
+							<input type="number" name="vat" th:field="*{vat}"id="vat" class="form-control" placeholder="VAT" required>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="form-row form-row-1">
+							<span id="total_vat" class="input-text white-text">Total VAT:</span>	
+						</div>
+						<div class="form-row form-row-2">
+							<input type="number" name="total_vat" th:field="*{total_vat}" id="total_vat" class="form-control" placeholder="Total VAT" required>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="form-row form-row-1">
+							<span id="ptotal" class="input-text white-text">Total Purchase:</span>	
+						</div>
+						<div class="form-row form-row-2">
+							<input type="number" name="ptotal" th:field="*{ptotal}"id="ptotal" class="form-control" placeholder="Total purchase" required>
+						</div>
+					</div>
+					<div class="form-row-last">
+						<input type="submit" name="register" class="register" value="Confirm Purchase">
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+    <script> function validateNumber(input) { input.value = input.value.replace(/[^0-9]/g, ''); } </script>
+
+</body>
+</html>

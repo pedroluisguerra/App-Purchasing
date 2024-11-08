@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="utf-8">
+    <title>Create new purchase</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- Font-->
+    <link rel="stylesheet" type="text/css" href="\css\montserrat-font.css">
+    <link rel="stylesheet" type="text/css" href="\fonts\material-design-iconic-font\css\material-design-iconic-font.min.css">
+    <!-- Main Style Css -->
+    <link rel="stylesheet" href="\css\style.css"/>
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+</head>
+<body class="form-v10">
+    <div class="page-content">
+        <a class="nav-link ms-auto" th:href="@{/purchase/calculation}">
+            <img src="\images\back_icon.png" alt="Logo" width="60" height="60" class="d-inline-block align-text-top image-spacing">
+        </a>
+        <div class="form-v10-content">
+            <form class="form-detail" th:action="@{/purchase}" th:object="${purchase}" method="POST" id="myform">
+                <div class="form-left">
+                    <h2>Client Information</h2>
+                    <div class="form-group">
+                        <div class="form-row form-row-1">
+                            <span id="client_id" class="input-text">Client Id:</span>
+                        </div>
+                        <div class="form-row form-row-2">
+                            <select name="client.id" th:field="*{client.id}" class="form-control">
+                                
+                                <option th:each="cli : ${clients}" th:value="${cli.id}" th:text="${cli.id + ' - ' + cli.client_name + ' ' + cli.client_surname}"></option>
+                            </select>
+                            <span class="select-btn">
+                                <i class="zmdi zmdi-chevron-down"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <input type="date" name="pdate" th:field="*{pdate}" id="pdate" class="form-control" placeholder="Purchase date YYYY-MM-DD" required>
+                    </div>
+                </div>
+                <div class="form-right">
+                    <h2>Purchase Details</h2>
+                    <div class="form-group">
+                        <div class="form-row form-row-3">
+                            <span id="product_id" class="input-text white-text">Product Id:</span>
+                        </div>
+                        <div class="form-row form-row-4">
+                            <select name="product.id" th:field="*{product.id}" class="form-control">
+                                
+                                <option th:each="prod : ${products}" th:value="${prod.id}" th:text="${prod.id + ' - ' + prod.prod_name}"></option>
+                            </select>
+                            <span class="select-btn">
+                                <i class="zmdi zmdi-chevron-down"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-row form-row-3">
+                            <span id="price_unit" class="input-text white-text">Price Unit:</span>
+                        </div>
+                        <div class="form-row form-row-4">
+                            <select name="product.price_unit" th:field="*{product.price_unit}" class="form-control">
+                      
+                                <option th:each="prod : ${products}" th:value="${prod.price_unit}" th:text="${prod.id + ' - ' + prod.price_unit}"></option>
+                            </select>
+                            <span class="select-btn">
+                                <i class="zmdi zmdi-chevron-down"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-row form-row-3">
+                            <span id="stock" class="input-text white-text">Stock:</span>
+                        </div>
+                        <div class="form-row form-row-4">
+                        	<select name="product.prod_stock" th:field="*{product.prod_stock}" class="form-control">
+                                
+                                <option th:each="prod : ${products}" th:value="${prod.prod_stock}" th:text="${prod.prod_stock + ' - ' + prod.prod_name}"></option>
+                            </select>
+                            <span class="select-btn">
+                                <i class="zmdi zmdi-chevron-down"></i>
+                            </span>
+                         </div>
+                    </div> 
+                    <div class="form-group">
+                        <div class="form-row form-row-3">
+                            <span id="pquantity" class="input-text white-text">Quantity:</span>
+                        </div>
+                        <div class="form-row form-row-4">
+                            <input type="number" name="pquantity" th:field="*{pquantity}" id="pquantity" class="form-control" placeholder="Insert quantity" required>
+                        </div>
+                    </div>            
+                    <div class="form-row-last">
+                        <input type="submit" name="register" class="register" value="Create Order">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+

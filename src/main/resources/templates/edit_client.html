@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+	<meta charset="utf-8">
+	<title>Edit client</title>	
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<!-- Font-->
+	<link rel="stylesheet" type="text/css" href="\css\montserrat-font.css">
+	<link rel="stylesheet" type="text/css" href="\fonts\material-design-iconic-font\css\material-design-iconic-font.min.css">
+	<!-- Main Style Css -->
+    <link rel="stylesheet" href="\css\style.css"/>
+</head>
+<body class="form-v10">
+	<div class="page-content">
+		<a class="nav-link ms-auto" th:href="@{/clients}"> 
+			<img src="\images\back_icon.png" alt="Logo" width="60" height="60" class="d-inline-block align-text-top image-spacing"> 
+		</a>
+		<div class="form-v10-content">
+			<form class="form-detail" th:action="@{/client/edit/{id}(id=${client.id})}" th:object="${client}"method="POST">
+				<div class="form-left">
+					<h2>General Information</h2>	
+					<div class="form-row">
+						<input type="text" name="client_name" th:field=*{client_name} id="client_name" class="input-text" placeholder="First Name" required>
+					</div>						
+					<div class="form-row">
+						<input type="text" name="client_surname" th:field=*{client_surname} id="client_surname" class="input-text" placeholder="Surname" required>
+					</div>
+					<div class="form-row">
+						<input type="date" name="bdate" th:field=*{bdate} id="bdate" class="form-control" placeholder="Birthday date YYYY-MM-DD" required>
+					</div>
+					<div class="form-row">
+						<input type="text" name="company_name" th:field=*{company_name} id="company_name" class="input-text" placeholder="Company Name" required>
+					</div>
+					<div class="form-row">
+						<input type="text" name="client_position" th:field=*{client_position} id="client_position" class="input-text" placeholder="Job Position" required>
+					</div>
+				</div>
+				<div class="form-right">
+					<h2>Contact Details</h2>
+					<div class="form-row">
+						<input type="text" name="client_address" th:field=*{client_address} class="input-text" id="client_address" placeholder="Address" required>
+					</div>
+					<div class="form-row">
+						<input type="text" name="zip_code" th:field=*{zip_code} class="input-text" id="zip_code" placeholder="Zip Code" required>
+					</div>
+					<div class="form-row">
+						<input type="text" name="city" th:field=*{city} id="city" class="input-text" placeholder="City" required>
+					</div>
+					<div class="form-row">
+						<input type="text" name="client_phone" th:field=*{client_phone} id="client_phone" class="input-text" placeholder="Phone" required>
+					</div>
+					<div class="form-row-last">
+						<input type="submit" name="register" class="register" value="Submit Modification">
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

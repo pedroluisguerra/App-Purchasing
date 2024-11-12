@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+  <head>
+  	<title>User</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	<link rel="stylesheet" href="\css\style1.css">
+	</head>
+	<body>
+	
+	<div class="page">
+    <nav id="colorlib-main-nav" role="navigation">
+      <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle active"><i></i></a>
+      <div class="js-fullheight colorlib-table">
+        <div class="img" style="background-image: url(images/bg_3.jpg);"></div>
+        <div class="colorlib-table-cell js-fullheight">
+          <div class="row no-gutters">
+            <div class="col-md-12 text-center">
+              <h1 class="mb-4"><a href="" class="logo">Options Menu</a></h1>
+              <ul>
+                <li class="active"><a th:href="@{/purchase/new}"><span>NEW PURCHASE</span></a></li>
+                <li><a th:href="@{/clients}"><span>CLIENTS</span></a></li>             
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    
+    <div id="colorlib-page">
+      <header>
+      	<div class="container">
+	        <div class="colorlib-navbar-brand">
+	          <a class="colorlib-logo" ><img alt="Company Logo" src="\images\menu_logo1.jpg" width="70" height="70"></a>
+	        </div>
+	        <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><img alt="Company Logo" src="\images\menu_logo2.png" width="70" height="70"><i></i></a>
+        </div>
+      </header>
+
+      <section class="hero-wrap js-fullheight">
+	      <div class="container px-0">
+	        <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center" data-scrollax-parent="true">
+	          <div class="col-md-12 ftco-animate text-center">
+	          	<div class="desc">
+		            <h1>
+		            	<a>
+		            		<img alt="Admin Logo" src="\images\user_logo.png" width="90" height="90">
+		            		STANDARD USER
+		            	</a>		            	
+		            </h1>
+		            <h3>Practica Final Bootcamp CEROXXI - Jr. Full Stack</h3>
+	            </div>
+	          </div>
+	        </div>
+	      </div>
+	    </section>
+
+    </div>
+  </div>
+
+	<script src="\js\jquery.min.js"></script>
+  <script src="\js\popper.js"></script>
+  <script src="\js\bootstrap.min.js"></script>
+  <script src="\js\main.js"></script>
+
+	</body>
+</html>

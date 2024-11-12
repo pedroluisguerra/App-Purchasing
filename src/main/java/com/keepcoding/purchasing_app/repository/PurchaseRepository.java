@@ -11,14 +11,6 @@ import com.keepcoding.purchasing_app.entity.Purchase;
 public interface PurchaseRepository extends JpaRepository<Purchase, Long> {
 	
 	@Query("SELECT e FROM Purchase e WHERE CONCAT(e.id, ' ', e.pdate, ' ', e.pquantity, ' ', e.ptotal, ' ',e.vat, ' ', e.total_vat) LIKE %:searchParam%")
-	List<Purchase> searchPurchase(@Param("searchParam") String searchParam);
-	
-	 default double totalPurchase(Double priceUnit, int quantity) {
-		return priceUnit * quantity;
-	}
-	
-	default double totalVat(double totalPurchase, double vat) {
-		return totalPurchase * vat;
-	}	
+	List<Purchase> searchPurchase(@Param("searchParam") String searchParam);	
 
 }

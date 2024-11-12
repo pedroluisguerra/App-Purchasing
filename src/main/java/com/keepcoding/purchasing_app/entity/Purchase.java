@@ -45,8 +45,7 @@ public class Purchase implements Serializable  {
 	@Column(nullable = false, length = 50)
 	private final double vat = 0.21; // Valor fijo de VAT (21%)
 	@Column(length = 50)
-	private Double total_vat;
-	
+	private Double total_vat;	
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name="client_id")
 	@JsonIgnoreProperties({"hibernateLazyInitializer","handler"})

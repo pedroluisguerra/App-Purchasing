@@ -10,14 +10,15 @@
 	<!-- Main Style Css -->
     <link rel="stylesheet" href="\css\style.css"/>
 </head>
-<body class="form-v10">
-	<div class="page-content">
-		<a class="nav-link ms-auto" th:href="@{/purchases}"> 
+<body class="form-v10">	
+	<div class="page-content">	
+		<a class="nav-link ms-auto" th:href="@{/purchase/delete/order}"> 
 			<img src="\images\back_icon.png" alt="Logo" width="60" height="60" class="d-inline-block align-text-top image-spacing"> 
 		</a>
 		<div class="form-v10-content">
 			<form class="form-detail" th:action="@{/purchase/calculate}" th:object="${purchase}" method="POST" id="myform">
 				<div class="form-left">
+					<p th:if="${success}" style="color: green;" th:text="${success}"></p>
 					<h2>Client Information</h2>	
 					<div class="form-group">
 						<div class="form-row form-row-5">

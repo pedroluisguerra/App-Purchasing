@@ -49,16 +49,4 @@ public class PurchaseServiceImpl implements PurchaseService{
 		return purchaseRepository.searchPurchase(clue);
 	}
 
-	@Override
-	public double totalPurchase(Double priceUnit, int quantity) {
-		
-		return purchaseRepository.totalPurchase(priceUnit, quantity);
-	}
-
-	@Override
-	public double totalVat(double totalPurchase, double vat) {
-		
-		return purchaseRepository.totalVat(totalPurchase, vat);
-	}
-
 }

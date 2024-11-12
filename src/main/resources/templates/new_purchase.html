@@ -14,10 +14,11 @@
 </head>
 <body class="form-v10">
     <div class="page-content">
-        <a class="nav-link ms-auto" th:href="@{/purchase/calculation}">
+        <a class="nav-link ms-auto" th:href="@{/purchases}">
             <img src="\images\back_icon.png" alt="Logo" width="60" height="60" class="d-inline-block align-text-top image-spacing">
         </a>
         <div class="form-v10-content">
+        <p th:if="${error2}" style="color: red;" th:text="${error2}"></p>
             <form class="form-detail" th:action="@{/purchase}" th:object="${purchase}" method="POST" id="myform">
                 <div class="form-left">
                     <h2>Client Information</h2>

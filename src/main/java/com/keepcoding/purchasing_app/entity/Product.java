@@ -33,7 +33,7 @@ public class Product implements Serializable {
 	private String prod_name;
 	@Column(nullable = false, length = 100)
 	private String prod_description;
-	@Column(length = 50)
+	@Column(nullable = false, length = 50)
 	private Double price_unit;
 	@Column(nullable = false, length = 50)
 	private int prod_stock;

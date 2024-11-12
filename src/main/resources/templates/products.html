@@ -48,10 +48,19 @@
         </div>
     </div>
     <div class="container text-center">
+    	<p th:if="${error1}" style="color: red;" th:text="${error1}"></p>
+	    <p th:if="${error2}" style="color: red;" th:text="${error2}"></p>
+	    <p th:if="${error3}" style="color: red;" th:text="${error3}"></p>
+	    <p th:if="${error4}" style="color: red;" th:text="${error4}"></p>
+	    <p th:if="${error5}" style="color: red;" th:text="${error5}"></p>
+	    <p th:if="${success}" style="color: green;" th:text="${success}"></p>
+	    <p th:if="${success1}" style="color: green;" th:text="${success1}"></p>  
+	    <p th:if="${success2}" style="color: red;" th:text="${success2}"></p>
+	    <p th:if="${info1}" style="color: red;" th:text="${info1}"></p>
+	    <p th:if="${info2}" style="color: red;" th:text="${info2}"></p>
         <div class="row">        
             <table class="table table-bordered custom-table">
-                <thead class="custom-thead">
-                
+                <thead class="custom-thead">                
                     <tr>
                         <th scope="col"># Id</th>
                         <th scope="col">Product Name</th>
@@ -81,6 +90,8 @@
                     </tr>
                 </tbody> 
             </table>
+            <p th:if="${error}" style="color: red;" th:text="${error}"></p>
+			<p th:if="${info}" style="color: red;" th:text="${info}"></p>
         </div>
     </div>
 

@@ -20,10 +20,4 @@ public interface PurchaseService {
 	
 	// Search a purchase by clue
 	List<Purchase> searcherPurchase(String clue);
-	
-	// Get total purchase
-	double totalPurchase(Double priceUnit, int quantity);
-	
-	// Get total with vat
-	double totalVat(double totalPurchase, double vat);
 }

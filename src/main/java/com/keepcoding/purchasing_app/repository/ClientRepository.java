@@ -14,3 +14,4 @@ public interface ClientRepository extends JpaRepository<Client, Long> {
 	List<Client> searchClient(@Param("searchParam") String searchParam);
 
 }
+

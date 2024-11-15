@@ -1,3 +1,4 @@
+
 INSERT INTO client(bdate, client_phone, city, client_name, client_position, client_surname, company_name, zip_code, client_address) VALUES ("1985-02-14","+34600123456","Madrid","Carlos","Manager","Gomez","TechCorp","28001","Calle Mayor, 10");
 INSERT INTO client(bdate, client_phone, city, client_name, client_position, client_surname, company_name, zip_code, client_address) VALUES ("1990-07-22","+34600234567","Barcelona","Ana","Developer","Martinez","Innovatech","08002","Carrer de Balmes, 20");
 INSERT INTO client(bdate, client_phone, city, client_name, client_position, client_surname, company_name, zip_code, client_address) VALUES ("1978-11-30","+34600345678","Valencia","Jose","Analyst","Perez","DataSol","46001","Avenida del Puerto, 15");
@@ -25,9 +26,20 @@ INSERT INTO product(create_date, price_unit, prod_stock, prod_name, prod_type, p
 INSERT INTO product(create_date, price_unit, prod_stock, prod_name, prod_type, provider_name, prod_description) VALUES ("2024-07-01", 89.99, 130, "Smart Thermostat", "Home", "EcoHome", "Programmable smart thermostat with remote control.");
 INSERT INTO product(create_date, price_unit, prod_stock, prod_name, prod_type, provider_name, prod_description) VALUES ("2024-07-15", 199.99, 70, "4K Monitor", "Electronics", "ViewPlus", "27-inch 4K UHD monitor with HDR.");
 
+INSERT INTO role(name) VALUES ("ADMIN");
+INSERT INTO role(name) VALUES ("USER");
+
+INSERT INTO user(username, password) VALUES ("pg@gmail.com", "$2a$10$7QvHkQjZyB6z2O/5xGvQFeKlbJJ58sf.UO0lhb4DpZT6XNZa5f9GS"); -- Contraseña cifrada "password"
+
+INSERT INTO user_roles(user_id, role_id) VALUES (1, 1);
+
 INSERT INTO purchase(pquantity, ptotal, purchase_date, total_vat, vat, client_id, product_id) VALUES (3, 749.97, "2023-04-06", 157.49, 0.21, 1, 10);
 INSERT INTO purchase(pquantity, ptotal, purchase_date, total_vat, vat, client_id, product_id) VALUES (5, 49.95, "2023-04-06", 10.49, 0.21, 3, 12);
 INSERT INTO purchase(pquantity, ptotal, purchase_date, total_vat, vat, client_id, product_id) VALUES (2, 179.98, "2023-04-06", 37.80, 0.21, 7, 5);
 INSERT INTO purchase(pquantity, ptotal, purchase_date, total_vat, vat, client_id, product_id) VALUES (4, 399.96, "2023-04-06", 83.99, 0.21, 9, 8);
 INSERT INTO purchase(pquantity, ptotal, purchase_date, total_vat, vat, client_id, product_id) VALUES (1, 199.99, "2023-04-06", 42.00, 0.21, 4, 15);
+
+
+
+
 

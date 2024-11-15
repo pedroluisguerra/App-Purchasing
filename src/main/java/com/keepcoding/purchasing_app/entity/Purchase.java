@@ -47,12 +47,12 @@ public class Purchase implements Serializable  {
 	@Column(length = 50)
 	private Double total_vat;	
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name="client_id")
+	@JoinColumn(name="client_id", nullable = false)
 	@JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
 	private Client client;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name="product_id")
+	@JoinColumn(name="product_id", nullable = false)
 	@JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
 	private Product product;
 	

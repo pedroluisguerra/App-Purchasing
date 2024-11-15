@@ -43,7 +43,7 @@ public class Client implements Serializable {
 	private String zip_code;
 	@Column(nullable = false, length = 50)
 	private String city;
-	@Column(nullable = false, length = 50, unique = true)
+	@Column(nullable = false, length = 50)
 	private String client_phone;
 	 
 	@Temporal(TemporalType.DATE) 
